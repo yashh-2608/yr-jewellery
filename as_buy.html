@@ -1,0 +1,219 @@
+<html>
+
+<head>
+    <title>Login - Urban Vogue</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .header-container {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .sub-header {
+            background-color: #1e381e;
+            padding: 5px 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .header {
+            background-color: #f8f4dc;
+            color: #b18e35;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .brandname {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .links a {
+            text-decoration: none;
+            color: #b18e35;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .links a:hover {
+            color: #ff6600;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 150px auto 50px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #b18e35;
+        }
+
+        .info-group {
+            margin-bottom: 15px;
+        }
+
+        .info-group label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .info-group p {
+            margin-top: 5px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #b18e35;
+            color: white;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background-color: #ff6600;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header-container">
+        <div class="sub-header">
+            <div>Shop At Special Prices | <a href="#" style="color: white;">Discover Now</a></div>
+        </div>
+
+        <div class="header">
+            <div class="brandname">YR JEWELLERS</div>
+            <nav class="nav-links">
+                <a href="as.html">Home</a> |
+                <a href="as_login.html">Login</a> |
+                <a href="as_register.html">Register</a> |
+                <a href="as_contact.html">Contact</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Confirm Your Details</h2>
+        <div class="info-group">
+            <label>Name:</label>
+            <p id="name"></p>
+        </div>
+        <div class="info-group">
+            <label>Email:</label>
+            <p id="email"></p>
+        </div>
+        <div class="info-group">
+            <label>Contact No.:</label>
+            <p id="contact"></p>
+        </div>
+        <div class="info-group">
+            <label>Address:</label>
+            <p id="address"></p>
+        </div>
+        <div class="info-group">
+            <label>State:</label>
+            <p id="state"></p>
+        </div>
+        <div class="info-group">
+            <label>Country:</label>
+            <p id="country"></p>
+        </div>
+        <div class="info-group">
+            <label>Pincode:</label>
+            <p id="zip"></p>
+        </div>
+
+        <h2>Order Summary</h2>
+        <div class="info-group">
+            <label>Product:</label>
+            <p id="product-name"></p>
+        </div>
+        <div class="info-group">
+            <label>Quantity:</label>
+            <p id="quantity"></p>
+        </div>
+        <div class="info-group">
+            <label>Total Price:</label>
+            <p id="total-price"></p>
+        </div>
+
+        <button class="btn" onclick="proceedToCheckout()">Proceed to Checkout</button>
+    </div>
+
+    <script>
+        window.onload = function () {
+            const user = JSON.parse(localStorage.getItem('registeredUser'));
+            const product = JSON.parse(localStorage.getItem('selectedProduct'));
+
+            if (!user) {
+                alert('Please login first.');
+                window.location.href = 'as_login.html';
+                return;
+            }
+
+            if (!product) {
+                alert('No product selected.');
+                window.location.href = 'as.html';
+                return;
+            }
+
+            const totalPrice = product.price * product.quantity;
+
+            document.getElementById('name').innerText = user.name || "N/A";
+            document.getElementById('email').innerText = user.email || "N/A";
+            document.getElementById('contact').innerText = user.contact || "N/A";
+            document.getElementById('address').innerText = user.address || "N/A";
+            document.getElementById('state').innerText = user.state || "N/A";
+            document.getElementById('country').innerText = user.country || "N/A";
+            document.getElementById('zip').innerText = user.zip || "N/A";
+
+            document.getElementById('product-name').innerText = product.name;
+            document.getElementById('quantity').innerText = product.quantity;
+            document.getElementById('total-price').innerText = `₹${totalPrice.toLocaleString()}`;
+        };
+
+        function proceedToCheckout() {
+            alert("Thank you for your purchase! 😊 Your total bill is: " + document.getElementById('total-price').innerText);
+            window.location.href = 'as.html';
+        }
+    </script>
+
+</body>
+
+</html>
+
+</html>

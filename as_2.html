@@ -1,0 +1,233 @@
+<html>
+
+<head>
+    <title>neckless</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+    }
+
+    .header-container {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    .sub-header {
+        background-color: #1e381e;
+        padding: 5px 20px;
+        color: white;
+        text-align: center;
+    }
+
+    .header {
+        background-color: #f8f4dc;
+        color: #b18e35;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .brandname {
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 20px;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #b18e35;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: #ff6600;
+    }
+
+    img {
+        border-radius: 10px;
+        width: 50%;
+        margin-left: 40px;
+        margin-top: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-img img {
+        width: 50%;
+        border-radius: 10px;
+    }
+
+    .product-details {
+        margin-left: 40px;
+    }
+
+    .product-details h1 {
+        font-size: 28px;
+        color: #333;
+    }
+
+    .product-details p {
+        font-size: 16px;
+        color: #555;
+        margin-top: 10px;
+        line-height: 1.6;
+    }
+
+    .price {
+        font-size: 22px;
+        color: #b18e35;
+        font-weight: bold;
+        margin-top: 15px;
+    }
+
+    .dropdown-container {
+        margin-top: 15px;
+    }
+
+    select {
+        padding: 8px;
+        font-size: 16px;
+        margin-right: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .buy-button {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #1e381e;
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: background 0.3s;
+        border: none;
+        cursor: pointer;
+    }
+
+    .buy-button:hover {
+        background-color: #ff6600;
+    }
+
+    .product-container {
+        display: flex;
+        align-items: center;
+        max-width: 1200px;
+        margin-top: 0px;
+        padding: 20px;
+        background-color: #f5f5f5;
+        border-radius: 10px;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+</style>
+
+<body>
+
+    <div class="header-container">
+        <div class="sub-header">
+            <div>Shop At Special Prices | <a href="#" style="color: white;">Discover Now</a></div>
+        </div>
+
+        <div class="header">
+            <div class="brandname">YR JEWELLERS</div>
+            <nav class="nav-links">
+                <a href="as.html">Home</a> |
+                <a href="as_login.html">Login</a> |
+                <a href="as_register.html">Register</a> |
+                <a href="as_contact.html">Contact</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="product-container">
+        <img src="https://cdn.joyalukkas.in/media/catalog/product/d/s/dsdn00015236.jpg?rnd=20200526195200&tr=w-760">
+        <div class="product-details">
+            <h1>Lavish Bloom Diamond Necklace</h1>
+            <p>
+                Gross weight : 179.559gm <br>
+            </p>
+            <p>
+                The Lavish Bloom Diamond Necklace exudes opulence with its intricately designed floral diamond
+                arrangement, capturing light from every angle. This exquisite piece adds a touch of luxury and
+                sophistication to your collection.
+            </p>
+            <div class="price">Price: ₹41,49,000.00</div>
+
+            <div class="dropdown-container">
+                <label for="size">Size: </label>
+                <select id="size">
+                    <option value="S">16</option>
+                    <option value="M">17</option>
+                    <option value="L">18</option>
+                    <option value="XL">19</option>
+                    <option value="XXL">20</option>
+                </select>
+
+                <label for="quantity">Quantity: </label>
+                <select id="quantity">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+
+            <button class="buy-button" onclick="handleBuy('Lavish Bloom Diamond Necklace', 4149000)">Buy Now</button>
+        </div>
+    </div>
+
+    <script>
+        function handleBuy(productName, productPrice) {
+            const user = localStorage.getItem('registeredUser');
+            const selectedQuantity = document.getElementById('quantity').value;
+
+            const productDetails = {
+                name: productName,
+                price: productPrice,
+                quantity: selectedQuantity
+            };
+
+            localStorage.setItem('selectedProduct', JSON.stringify(productDetails));
+
+            if (user) {
+                window.location.href = "as_buy.html";
+            } else {
+                window.location.href = "as_login.html";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

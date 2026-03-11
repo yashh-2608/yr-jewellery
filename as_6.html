@@ -1,0 +1,247 @@
+<html>
+
+<head>
+    <title>ring</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+    }
+
+    .header-container {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    .sub-header {
+        background-color: #1e381e;
+        padding: 5px 20px;
+        color: white;
+        text-align: center;
+    }
+
+    .header {
+        background-color: #f8f4dc;
+        color: #b18e35;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .brandname {
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 20px;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #b18e35;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: #ff6600;
+    }
+
+    img {
+        border-radius: 10px;
+        width: 50%;
+        margin-left: 40px;
+        margin-top: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-img img {
+        width: 50%;
+        border-radius: 10px;
+    }
+
+    .product-details {
+        margin-left: 40px;
+    }
+
+    .product-details h1 {
+        font-size: 28px;
+        color: #333;
+    }
+
+    .product-details p {
+        font-size: 16px;
+        color: #555;
+        margin-top: 10px;
+        line-height: 1.6;
+    }
+
+    .price {
+        font-size: 22px;
+        color: #b18e35;
+        font-weight: bold;
+        margin-top: 15px;
+    }
+
+    .dropdown-container {
+        margin-top: 15px;
+    }
+
+    select {
+        padding: 8px;
+        font-size: 16px;
+        margin-right: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .buy-button {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #1e381e;
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: background 0.3s;
+        border: none;
+        cursor: pointer;
+    }
+
+    .buy-button:hover {
+        background-color: #ff6600;
+    }
+
+    .product-container {
+        display: flex;
+        align-items: center;
+        max-width: 1200px;
+
+        margin-top: 0px;
+        padding: 20px;
+        background-color: #f5f5f5;
+        border-radius: 10px;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aria Cuban Ring - YR Jewellers</title>
+</head>
+
+<body>
+
+    <div class="header-container">
+        <div class="sub-header">
+            <div>Shop At Special Prices | <a href="#" style="color: white;">Discover Now</a></div>
+        </div>
+
+        <div class="header">
+            <div class="brandname">YR JEWELLERS</div>
+            <nav class="nav-links">
+                <a href="as.html">Home</a> |
+                <a href="as_login.html">Login</a> |
+                <a href="as_register.html">Register</a> |
+                <a href="as_contact.html">Contact</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="product-container">
+        <img
+            src="https://www.tanishq.ae/dw/image/v2/BJGM_PRD/on/demandware.static/-/Sites-Tanishq-site-catalog/default/dwfba6b370/images/hi-res/UPW3KKVBJ1A40_10.jpg?sw=640&sh=640">
+        <div class="product-details">
+            <h1>Prosperity Blossom Bangle</h1>
+            <p>
+                Gross weight: 24.01 gm <br>
+                A vibrant bangle set adorned with colorful stones, intricate floral patterns, and a symbolic coconut
+                motif representing prosperity. This design brings a joyful blend of tradition and elegance to your
+                wrist. <br>
+                Step into abundance with the Prosperity Blossom Bangle Set, where vibrant gemstones meet intricate
+                craftsmanship. The design is a celebration of life's flourishing, with delicate floral patterns and the
+                symbolic coconut motif woven into the bangle's artful detailing. The gemstones provide a burst of color,
+                complementing the traditional motifs that evoke feelings of prosperity and good fortune
+            </p>
+            <div class="price">Price: ₹264,936.00</div>
+
+            <div class="dropdown-container">
+                <label for="size">Size: </label>
+                <select id="size">
+                    <option value="S">16</option>
+                    <option value="M">17</option>
+                    <option value="L">18</option>
+                    <option value="XL">19</option>
+                    <option value="XXL">20</option>
+                </select>
+
+                <label for="quantity">Quantity: </label>
+                <select id="quantity">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+
+            <button class="buy-button" onclick="handleBuy('Prosperity Blossom Bangle', 264936)">Buy Now</button>
+        </div>
+    </div>
+
+    <script>
+        function handleBuy(productName, productPrice) {
+            const user = localStorage.getItem('registeredUser');
+            const selectedQuantity = document.getElementById('quantity').value;
+
+            const productDetails = {
+                name: productName,
+                price: productPrice,
+                quantity: selectedQuantity
+            };
+
+            localStorage.setItem('selectedProduct', JSON.stringify(productDetails));
+
+            if (user) {
+                window.location.href = "as_buy.html";
+            } else {
+                window.location.href = "as_login.html";
+            }
+        }
+    </script>
+
+</body>
+
+
+</html>
